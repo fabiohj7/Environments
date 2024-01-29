@@ -12,5 +12,9 @@ Skhd as my hotkey daemon.
 
 ## Linux
 
-In the future I will be posting my linux environments too.
-Even though the Neovim one would be very similar.
+Neovim configuration for linus has a couple different installs but most of it should work.
+
+- Need to install black.
+- Need to install a nerd font.
+
+Added my Tmux configuration.
