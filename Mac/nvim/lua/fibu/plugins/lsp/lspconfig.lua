@@ -70,14 +70,20 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    -- configure html server
-    lspconfig["html"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
+    -- Angular configuration
+    local project_library_path = "/path/to/project/lib"
+    local cmd =
+      { "ngserver", "--stdio", "--tsProbeLocations", project_library_path, "--ngProbeLocations", project_library_path }
+
+    require("lspconfig").angularls.setup({
+      cmd = cmd,
+      on_new_config = function(new_config, new_root_dir)
+        new_config.cmd = cmd
+      end,
     })
 
-    -- configure typescript server with plugin
-    lspconfig["tsserver"].setup({
+    -- configure html server
+    lspconfig["html"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
@@ -95,12 +101,6 @@ return {
       filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
     })
 
-    -- configure tailwindcss server
-    lspconfig["tailwindcss"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
     -- configure prisma orm server
     lspconfig["prismals"].setup({
       capabilities = capabilities,
@@ -111,20 +111,6 @@ return {
     lspconfig["java_language_server"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-    })
-
-    -- configure graphql language server
-    lspconfig["graphql"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-    })
-
-    -- configure emmet language server
-    lspconfig["emmet_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
     })
 
     -- configure python server

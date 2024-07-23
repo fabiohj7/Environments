@@ -18,17 +18,17 @@ return {
     workspaces = {
       {
         name = "ComputerScience",
-        path = "~/Desktop/vaults/ComputerScience",
+        path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/ComputerScience/",
       },
 
       {
         name = "personal",
-        path = "~/Desktop/vaults/personal",
+        path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/personal/",
       },
 
       {
         name = "hacking",
-        path = "~/Desktop/vaults/hacking",
+        path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/hacking/",
       },
     },
 
