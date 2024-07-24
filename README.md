@@ -18,3 +18,9 @@ Neovim configuration for linus has a couple different installs but most of it sh
 - Need to install a nerd font.
 
 Added my Tmux configuration.
+
+## Corne
+
+Corne Keyboard Layout.
+
+6 layer corne setup with **Vial**.
